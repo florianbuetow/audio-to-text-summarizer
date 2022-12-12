@@ -1,0 +1,9 @@
+# local package
+-e .
+
+# external requirements
+openai==0.25.0
+python-dotenv==0.21.0
+whisper @ git+https://github.com/openai/whisper.git@fd8f80c8b880dd7c284c109ca7f03dbe978bc532
+spacy==3.4.3
+yt-dlp==2022.11.11
