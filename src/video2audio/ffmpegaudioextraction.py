@@ -32,7 +32,6 @@ class FFmpegAudioExtraction:
         src_file_escaped = self._escape_path(src_file)
         dst_file_escaped = self._escape_path(dst_file)
         cmd = f"ffmpeg -hide_banner -loglevel error -i {src_file_escaped} {self._conversion_settings} {dst_file_escaped}"
-        print("Executing command: ", cmd)
         response = os.system(cmd)
         if response != 0:
             logging.error(f"Error converting file '{src_file}' to '{dst_file}'.")
