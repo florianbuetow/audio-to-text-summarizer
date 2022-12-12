@@ -18,7 +18,7 @@ class WhisperWrapper:
 
     def transcribe(self, srcFile: str) -> str:
         model = self._get_model()
-        result = model.transcribe(srcFile)
+        result = model.transcribe(srcFile, fp16=False)
         return result['text']
 
     def transcribe_to_file(self, src_file: str, dst_file: str, overwrite: bool = False) -> bool:
