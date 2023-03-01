@@ -21,10 +21,8 @@ class FFmpegAudioExtraction:
         }
 
     def convert_to_audio(self, src_file: str, dst_file: str, overwrite: bool = False) -> bool:
-        print("Converting file '{}' to '{}'.".format(src_file, dst_file))
         # get the extension of the destination file
         dst_extension = os.path.splitext(dst_file)[1].lower()
-        print("dst_extension: {}".format(dst_extension))
         if dst_extension in self._conversion_settings:
             return self._convert_with_ffmpeg(src_file, dst_file, self._conversion_settings[dst_extension], overwrite)
         else:
