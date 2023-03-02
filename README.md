@@ -32,22 +32,33 @@ in my "watch later" playlists and I can't possibly all watch.
 ---
 Virtual environment and installing dependencies:
 
+```text
 1. Navigate to the directory where you want to create the virtual environment.
 2. Create a new virtual environment: `python3 -m venv env`.
 3. Activate the virtual environment: `source env/bin/activate`.
 4. Install dependencies from `requirements.txt`: `pip install -r requirements.txt`.
 5. Start working on your project within the virtual environment.
 6. Deactivate the virtual environment: `deactivate`.
+```
 
+Configuring the the models and API:
+
+```text
+1. Copy the file 'dot.env' to '.env' in the root directory.
+2. Never add '.env' to your version control system.
+3. Edit the '.env' file and add your OpenAI API key.
+4. Keep or change the other parameters in '.env' as you see fit.
+```
 Installing and running Jupyter Notebooks:
 
+```text
 1. Activate your virtual environment.
 2. Install Jupyter Notebooks: `pip install jupyter`.
 3. Start the notebook server: `jupyter notebook`.
 4. Open the Jupyter Notebook interface in your web browser (should happen automatically).
 5. Navigate to the notebooks folder and click on _demo.ipynb_
 6. Press the play button to run the cells of the notebook.
-
+```
 ## Known issues
 
 ---
