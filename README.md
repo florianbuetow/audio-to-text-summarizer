@@ -35,6 +35,7 @@ Prerequisites:
 * Python 3.8+
 * ffmpeg in your PATH (get it [here](https://ffmpeg.org/download.html))
 * OpenAI API key (get one [here](https://beta.openai.com/))
+* GPU with CUDA support (optional, but highly recommended for fast transcription)
 
 Virtual environment and installing dependencies:
 
