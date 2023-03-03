@@ -100,6 +100,7 @@ Possible improvements to this project are:
     ├── LICENSE
     ├── README.md
     ├── requirements.txt                    <- The requirements file for reproducing the environment.
+    ├── dot.env                             <- Template for the .env file.
     │
     ├── data
     │   ├── video_features                  <- video downloads are stored here
