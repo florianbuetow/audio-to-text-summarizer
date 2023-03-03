@@ -5,12 +5,12 @@ from util import nlp
 
 class GPT3Wrapper:
 
-    def __init__(self, model_name: str, api_key: str, max_tokens=1024, temperature=0.5):
+    def __init__(self, model_name: str, api_key: str, max_return_tokens=1024, temperature=0.5):
         openai.api_key = api_key
         self._model_name = model_name
-        self._max_tokens = max_tokens
+        self._max_return_tokens = max_return_tokens
         self._temperature = temperature
-        self._text_len_limit = self._max_tokens * 3
+        self._text_len_limit = self._max_return_tokens * 3
         self._nlputil = nlp.NLPUtil()
 
     def summarise_to_file(self, src_file: str, dst_file: str, overwrite: bool = False) -> bool:
@@ -67,11 +67,12 @@ class GPT3Wrapper:
     def _summarise_small_text(self, text: str) -> str:
         prompt = f"{text}\n\nTl;dr"  # adding Tl;dr to prompt GPT-3 to create a summary
         response = openai.Completion.create(
-            engine=self._model_name,
+            model=self._model_name,
+            #messages=[{'role': 'user', 'content': prompt}],
             prompt=prompt,
-            max_tokens=self.max_tokens,
+            max_tokens=self._max_return_tokens,
             n=1,
-            temperature=self._tenperature,
+            temperature=self._temperature,
         )
         summary = response["choices"][0]["text"]
         if summary.startswith(":"):
